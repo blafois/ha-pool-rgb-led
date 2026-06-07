@@ -1,0 +1,62 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Pool RGB LED",
+        "description": "Provide either a target relay/light entity OR a KNX group address (e.g. 1/2/3). KNX direct-write skips the entity layer and gives more consistent pulse timing. The integration drives the LED by briefly cutting power.",
+        "data": {
+          "target_entity": "Target light or switch (optional if KNX address is set)",
+          "knx_address": "KNX group address (optional, e.g. 1/2/3)",
+          "pulse_ms": "Power-cut duration (ms)",
+          "gap_ms": "Gap between pulses (ms)",
+          "settle_ms": "Settle time after a burst (ms)"
+        }
+      }
+    },
+    "error": {
+      "invalid_knx_address": "Not a valid KNX group address (expected e.g. 1/2/3).",
+      "need_target_or_knx": "Set either a target entity or a KNX group address."
+    },
+    "abort": {
+      "already_configured": "This target is already configured."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Pool RGB LED options",
+        "data": {
+          "target_entity": "Target light or switch (optional if KNX address is set)",
+          "knx_address": "KNX group address (optional, e.g. 1/2/3)",
+          "pulse_ms": "Power-cut duration (ms)",
+          "gap_ms": "Gap between pulses (ms)",
+          "settle_ms": "Settle time after a burst (ms)"
+        }
+      }
+    },
+    "error": {
+      "invalid_knx_address": "Not a valid KNX group address (expected e.g. 1/2/3).",
+      "need_target_or_knx": "Set either a target entity or a KNX group address."
+    }
+  },
+  "services": {
+    "resync": {
+      "name": "Resync",
+      "description": "Issue a double power-cut to reset the LED. Lands on Blue (color 2)."
+    },
+    "next": {
+      "name": "Next mode",
+      "description": "Advance one color/sequence forward."
+    },
+    "set_mode": {
+      "name": "Set mode",
+      "description": "Step forward to a specific color or sequence.",
+      "fields": {
+        "mode": {
+          "name": "Mode",
+          "description": "Color or sequence name."
+        }
+      }
+    }
+  }
+}

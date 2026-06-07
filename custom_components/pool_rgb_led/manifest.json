@@ -1,0 +1,13 @@
+{
+  "domain": "pool_rgb_led",
+  "name": "Pool RGB LED",
+  "version": "0.1.0",
+  "config_flow": true,
+  "documentation": "https://github.com/yourname/ha-pool-rgb-led",
+  "issue_tracker": "https://github.com/yourname/ha-pool-rgb-led/issues",
+  "iot_class": "local_push",
+  "integration_type": "device",
+  "codeowners": [],
+  "after_dependencies": ["knx"],
+  "requirements": []
+}

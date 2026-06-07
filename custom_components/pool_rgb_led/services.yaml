@@ -1,0 +1,53 @@
+resync:
+  name: Resync
+  description: >
+    Issue a double power-cut to reset the LED controller. After resync, the
+    LED is on Blue (color index 1, which the device treats as the start).
+  target:
+    entity:
+      integration: pool_rgb_led
+      domain: light
+
+next:
+  name: Next mode
+  description: Advance one color/sequence forward via a single short power-cut.
+  target:
+    entity:
+      integration: pool_rgb_led
+      domain: light
+
+set_mode:
+  name: Set mode
+  description: >
+    Step forward through the cycle until the named color or sequence is active.
+  target:
+    entity:
+      integration: pool_rgb_led
+      domain: light
+  fields:
+    mode:
+      name: Mode
+      description: Color or sequence name.
+      required: true
+      example: Blue
+      selector:
+        select:
+          options:
+            - White
+            - Blue
+            - Blue Lagoon
+            - Cyan
+            - Violet
+            - Magenta
+            - Pink
+            - Red
+            - Orange
+            - Green
+            - Warm White
+            - Gradient
+            - Rainbow
+            - Parade
+            - Techno
+            - Horizon
+            - Random
+            - Magic
