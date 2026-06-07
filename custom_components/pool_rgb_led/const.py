@@ -20,25 +20,23 @@ DEFAULT_SETTLE_MS = 1500
 COLORS: list[str] = [
     "White",
     "Blue",
-    "Blue Lagoon",
+    "Light Blue",
     "Cyan",
-    "Violet",
-    "Magenta",
-    "Pink",
-    "Red",
-    "Orange",
+    "Light Green",
     "Green",
-    "Warm White",
+    "Light Yellow",
+    "Light Yellow 2",
+    "Yellow",
+    "Red",
+    "Violet",
 ]
 
 SEQUENCES: list[str] = [
-    "Gradient",
-    "Rainbow",
-    "Parade",
-    "Techno",
-    "Horizon",
-    "Random",
-    "Magic",
+    "Sequence 1",
+    "Sequence 2",
+    "Sequence 3",
+    "Sequence 4",
+    "Sequence 5",
 ]
 
 MODES: list[str] = COLORS + SEQUENCES
